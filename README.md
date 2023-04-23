@@ -5,20 +5,20 @@ User Colors is a web application that allows users to create and save custom col
 
 ## Technologies Used
 
-- [React]
-- [React Router]
-- Local Storage]
-- [CSS Modules]
-- [React Toastify]
+- React
+- React Router
+- Local Storage
+- CSS Modules
+- React Toastify
 
 
 ## Getting Started
 To get started with User Colors, follow these steps:
 
--1. Clone this repository to your local machine
--2. Run npm install to install the dependencies
--3. Run npm start to start the development server
--4. Navigate to [http://localhost:3000] in your web browser
+- Clone this repository to your local machine
+- Run npm install to install the dependencies
+- Run npm start to start the development server
+- Navigate to [local host](http://localhost:3000) in your web browser
 
 
 ## Usage
