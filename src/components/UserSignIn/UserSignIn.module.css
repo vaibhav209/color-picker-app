@@ -1,0 +1,44 @@
+.loginSection {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.userInput {
+  width: 294px;
+  height: 44px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.loginButton {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-inline: 30px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #28a745;
+  width: 294px;
+  height: 44px;
+}
+.loginButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.loginSection p{
+  margin-top: 5px;
+}
+
+.loginSection h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.linkStyles{
+  color: #222222;
+}

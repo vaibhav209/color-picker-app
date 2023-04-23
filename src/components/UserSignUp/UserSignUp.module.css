@@ -1,0 +1,43 @@
+.signupSection {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.userInput {
+  width: 294px;
+  height: 44px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.signupButton {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-inline: 30px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #0275d8;
+  width: 294px;
+  height: 44px;
+}
+.signupButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.signupSection p {
+  margin-top: 5px;
+}
+
+.signupSection h2 {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.linkStyles {
+  color: #222222;
+}

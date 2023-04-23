@@ -1,0 +1,11 @@
+.masterBoard {
+  display: flex;
+  justify-content: center;
+}
+.colorCollection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+

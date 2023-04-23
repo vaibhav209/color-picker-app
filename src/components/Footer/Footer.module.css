@@ -1,0 +1,9 @@
+.footerContainer{
+  position: absolute;
+  bottom: 2px;
+  font-size: 0.90rem;
+  padding-bottom: 8px;
+}
+.linkStyles{
+  color: #222222;
+}

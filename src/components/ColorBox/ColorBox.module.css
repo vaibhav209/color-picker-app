@@ -1,0 +1,9 @@
+.colorBox {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+}
