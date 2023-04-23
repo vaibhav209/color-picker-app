@@ -1,6 +1,6 @@
 ### color-picker-app
 
-User Colors is a web application that allows users to create and save custom colors. Users can sign up for an account, sign in, and access their saved colors from their user home page.
+Color Picker is a web application that allows users to create and save custom colors. Users can sign up for an account, sign in, and access their saved colors from their user home page.
 
 
 ## Technologies Used
