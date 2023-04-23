@@ -18,7 +18,7 @@ To get started with User Colors, follow these steps:
 - Clone this repository to your local machine
 - Run npm install to install the dependencies
 - Run npm start to start the development server
-- Navigate to [local host](http://localhost:3000) in your web browser
+- Navigate to [localhost](http://localhost:3000) in your web browser
 
 
 ## Usage
