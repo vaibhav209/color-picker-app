@@ -1,6 +1,6 @@
 {
-  "USERSIGNIN": "/",
-  "USERHOME": "/home",
+  "USERSIGNIN": "/signin",
+  "USERHOME": "/",
   "USERSIGNUP": "/signup",
   "USERFEEDBACK": "/feedback"
 }
