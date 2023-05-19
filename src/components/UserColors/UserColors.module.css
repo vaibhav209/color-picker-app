@@ -8,4 +8,8 @@
   gap: 10px;
   justify-content: center;
 }
-
+.helpTextStyle {
+  position: absolute;
+  top: 20px;
+  right: 5px;
+}
