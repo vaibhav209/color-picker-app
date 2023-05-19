@@ -37,6 +37,12 @@ const UserSignUp = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      signUpHandler();
+    }
+  };
+
   return (
     <div className={styles.signupSection}>
       <h2>Sign Up</h2>
@@ -46,6 +52,7 @@ const UserSignUp = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         className={styles.userInput}
+        onKeyPress={handleKeyPress}
       />
 
       <input
@@ -54,6 +61,7 @@ const UserSignUp = () => {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         className={styles.userInput}
+        onKeyPress={handleKeyPress}
       />
 
       <input
@@ -62,6 +70,7 @@ const UserSignUp = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className={styles.userInput}
+        onKeyPress={handleKeyPress}
       />
 
       <button
@@ -74,7 +83,9 @@ const UserSignUp = () => {
       <p>
         Already have an account?{' '}
         <span>
-          <Link to={routes.USERSIGNIN} className={styles.linkStyles}>SignIn</Link>
+          <Link to={routes.USERSIGNIN} className={styles.linkStyles}>
+            SignIn
+          </Link>
         </span>
       </p>
 
