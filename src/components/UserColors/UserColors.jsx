@@ -3,7 +3,7 @@ import ColorBox from '../ColorBox/ColorBox';
 import ColorInput from '../ColorInput/ColorInput';
 import ColorSelectorButton from '../ColorSelectorButton/ColorSelectorButton';
 import SignoutButton from '../SignoutButton/SignoutButton';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './UserColors.module.css';
 import routes from '../../routes/routes.json';
 import { toast } from 'react-toastify';
@@ -55,6 +55,11 @@ const UserColors = () => {
 
   return (
     <>
+      <div className={styles.helpTextStyle}>
+        <Link to={routes.HELP} style={{ color: 'black' }}>
+          How to use?
+        </Link>
+      </div>
       <div
         className={styles.colorSection}
         style={{
