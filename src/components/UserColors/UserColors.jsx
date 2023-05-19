@@ -57,7 +57,7 @@ const UserColors = () => {
     <>
       <div className={styles.helpTextStyle}>
         <Link to={routes.HELP} style={{ color: 'black' }}>
-          How to use?
+          How to play?
         </Link>
       </div>
       <div
