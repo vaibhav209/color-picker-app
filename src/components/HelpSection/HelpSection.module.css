@@ -1,9 +1,9 @@
 .helpContainer {
   padding: 20px;
 }
-
 .textStyles {
   margin-top: 5px;
+  color: #333;
 }
 .listStyle {
   margin-top: 12px;
@@ -15,9 +15,9 @@
 .playButton {
   cursor: pointer;
   border: none;
-  padding: 6px;
+  padding: 10px 20px;
   margin: 20px 0 0 20px;
   border-radius: 4px;
-  background-color: #219f56;
+  background-color: #09aeae;
   color: white;
 }
