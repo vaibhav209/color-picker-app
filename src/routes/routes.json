@@ -2,6 +2,6 @@
   "USERSIGNIN": "/signin",
   "USERHOME": "/",
   "USERSIGNUP": "/signup",
-  "USERFEEDBACK": "/feedback"
+  "USERFEEDBACK": "/feedback",
+  "HELP":"/help"
 }
-
