@@ -38,6 +38,12 @@ const UserSignIn = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      signInHandler();
+    }
+  };
+
   return (
     <>
       <div className={styles.loginSection}>
@@ -48,6 +54,7 @@ const UserSignIn = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           className={styles.userInput}
+          onKeyPress={handleKeyPress}
         />
 
         <input
@@ -56,6 +63,7 @@ const UserSignIn = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className={styles.userInput}
+          onKeyPress={handleKeyPress}
         />
 
         <button
