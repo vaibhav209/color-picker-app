@@ -1,0 +1,23 @@
+.helpContainer {
+  padding: 20px;
+}
+
+.textStyles {
+  margin-top: 5px;
+}
+.listStyle {
+  margin-top: 12px;
+}
+.buttonBox {
+  text-align: center;
+  margin-top: 20px;
+}
+.playButton {
+  cursor: pointer;
+  border: none;
+  padding: 6px;
+  margin: 20px 0 0 20px;
+  border-radius: 4px;
+  background-color: #219f56;
+  color: white;
+}
