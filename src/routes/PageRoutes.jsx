@@ -14,6 +14,7 @@ const PageRoutes = () => {
     <Routes>
       <Route path={routes.USERHOME} element={<PrivateRoute />}>
         <Route path={routes.USERHOME} element={<Home />} />
+        <Route path={routes.HELP} element={<Help />} />
       </Route>
 
       <Route path={routes.USERSIGNIN} element={<SignIn />} />
