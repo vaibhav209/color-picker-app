@@ -6,12 +6,12 @@
   align-items: center;
   flex-direction: column;
 }
-.userInput {
-  width: 294px;
-  height: 44px;
-  margin-bottom: 10px;
+
+.signupSection h2 {
   text-align: center;
+  margin-bottom: 22px;
 }
+
 .signupButton {
   padding: 10px;
   text-align: center;
@@ -27,17 +27,4 @@
 .signupButton:disabled {
   opacity: 0.5;
   cursor: default;
-}
-
-.signupSection p {
-  margin-top: 5px;
-}
-
-.signupSection h2 {
-  text-align: center;
-  margin-bottom: 22px;
-}
-
-.linkStyles {
-  color: #222222;
 }

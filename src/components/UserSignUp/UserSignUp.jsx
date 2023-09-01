@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './UserSignUp.module.css';
 import routes from '../../routes/routes.json';
 import { toast } from 'react-toastify';
 import Footer from '../Footer/Footer';
+import InputField from '../InputField/InputField';
+import AuthLink from '../AuthLink/AuthLink';
+import ActionButton from '../ActionButton/ActionButton';
+import { isValidEmail } from '../../utils/validationUtils';
 
 const UserSignUp = () => {
   const [name, setName] = useState('');
@@ -11,12 +15,10 @@ const UserSignUp = () => {
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
-
-  const emailPattern =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
 
   const signUpHandler = () => {
-    if (!emailPattern.test(username)) {
+    if (!isValidEmail(username)) {
       toast.error('Please enter a valid email address');
     } else if (name.length < 3) {
       toast.error('Please enter valid name');
@@ -46,48 +48,42 @@ const UserSignUp = () => {
   return (
     <div className={styles.signupSection}>
       <h2>Sign Up</h2>
-      <input
-        placeholder="Name"
-        type="text"
+
+      <InputField
+        placeholder="name"
+        type="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className={styles.userInput}
         onKeyPress={handleKeyPress}
       />
 
-      <input
+      <InputField
         placeholder="Email"
         type="email"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className={styles.userInput}
         onKeyPress={handleKeyPress}
       />
 
-      <input
+      <InputField
         placeholder="Password"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className={styles.userInput}
         onKeyPress={handleKeyPress}
       />
 
-      <button
+      <ActionButton
         onClick={signUpHandler}
         className={styles.signupButton}
         disabled={!name || !username || !password}
-      >
-        Sign Up
-      </button>
-      <p>
-        Already have an account?{' '}
-        <span>
-          <Link to={routes.USERSIGNIN} className={styles.linkStyles}>
-            SignIn
-          </Link>
-        </span>
-      </p>
+        btnName="Sign Up"
+      />
+      <AuthLink
+        text="Already have an account?"
+        to={routes.USERSIGNIN}
+        toLinkName="SignIn"
+      />
 
       <Footer />
     </div>

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import ColorBox from '../ColorBox/ColorBox';
 import ColorInput from '../ColorInput/ColorInput';
-import ColorSelectorButton from '../ColorSelectorButton/ColorSelectorButton';
-import SignoutButton from '../SignoutButton/SignoutButton';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import styles from './UserColors.module.css';
 import routes from '../../routes/routes.json';
 import { toast } from 'react-toastify';
+import ActionButton from '../ActionButton/ActionButton';
 
 const UserColors = () => {
   const [red, setRed] = useState(0);
@@ -47,7 +46,6 @@ const UserColors = () => {
   };
 
   const signoutHandler = () => {
-    localStorage.clear();
     localStorage.removeItem('loggedIn');
     navigate(routes.USERSIGNIN);
     toast.info('You have successfully signed out!');
@@ -56,9 +54,9 @@ const UserColors = () => {
   return (
     <>
       <div className={styles.helpTextStyle}>
-        <Link to={routes.HELP} style={{ color: 'black' }}>
+        <NavLink to={routes.HELP} style={{ color: '#222' }}>
           How to play?
-        </Link>
+        </NavLink>
       </div>
       <div
         className={styles.colorSection}
@@ -68,9 +66,11 @@ const UserColors = () => {
           height: '100vh',
         }}
       >
-        <ColorSelectorButton
+        <ActionButton
           onClick={colorSelectHandler}
           disabled={colorBoard}
+          className={styles.selectColorButton}
+          btnName="Select Color"
         />
 
         <div className={styles.masterBoard}>
@@ -98,7 +98,12 @@ const UserColors = () => {
             </div>
           )}
         </div>
-        <SignoutButton onClick={signoutHandler} />
+
+        <ActionButton
+          className={styles.signoutStyles}
+          onClick={signoutHandler}
+          btnName="Sign Out"
+        />
       </div>
     </>
   );

@@ -1,7 +1,17 @@
 import React from 'react';
+import ActionButton from '../ActionButton/ActionButton';
+import RangeSlider from '../RangeSlider/RangeSlider';
 import styles from './ColorInput.module.css';
 
-const ColorInput = ({red, green, blue, setRed, setGreen, setBlue,  onClick}) => {
+const ColorInput = ({
+  red,
+  green,
+  blue,
+  setRed,
+  setGreen,
+  setBlue,
+  onClick,
+}) => {
   return (
     <>
       <div className={styles.userInputBoard}>
@@ -13,50 +23,29 @@ const ColorInput = ({red, green, blue, setRed, setGreen, setBlue,  onClick}) => 
             borderRadius: '15%',
           }}
         ></div>
-        <div>
-          <div
-            className={styles.colorPoint}
-            style={{ backgroundColor: 'red' }}
-          />
-          <input
-            type={'range'}
-            min={'0'}
-            max={'255'}
-            value={red}
-            style={{ marginTop: '20px' }}
-            onChange={(e) => setRed(e.target.value)}
-          />
-        </div>
-        <div>
-          <div
-            className={styles.colorPoint}
-            style={{ backgroundColor: 'green' }}
-          />
-          <input
-            type={'range'}
-            min={'0'}
-            max={'255'}
-            value={green}
-            style={{ marginTop: '7px' }}
-            onChange={(e) => setGreen(e.target.value)}
-          />
-        </div>
-        <div>
-          <div
-            className={styles.colorPoint}
-            style={{ backgroundColor: 'blue' }}
-          />
-          <input
-            type={'range'}
-            min={'0'}
-            max={'255'}
-            value={blue}
-            style={{ marginTop: '7px' }}
-            onChange={(e) => setBlue(e.target.value)}
-          />
-          <div className={styles.saveButton}>
-            <button onClick={onClick}>Save</button>
-          </div>
+        <RangeSlider
+          className={styles.colorPoint}
+          bgColor="red"
+          value={red}
+          style={{ marginTop: '20px' }}
+          onChange={(e) => setRed(e.target.value)}
+        />
+        <RangeSlider
+          className={styles.colorPoint}
+          bgColor="green"
+          value={green}
+          style={{ marginTop: '7px' }}
+          onChange={(e) => setGreen(e.target.value)}
+        />
+        <RangeSlider
+          className={styles.colorPoint}
+          bgColor="blue"
+          value={blue}
+          style={{ marginTop: '7px' }}
+          onChange={(e) => setBlue(e.target.value)}
+        />
+        <div className={styles.saveButton}>
+          <ActionButton onClick={onClick} btnName="Save" />
         </div>
       </div>
     </>

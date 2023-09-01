@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import styles from './UserFeedback.module.css';
+import ActionButton from '../ActionButton/ActionButton';
 
 const UserFeedback = () => {
   const [feedbackType, setFeedbackType] = useState('');
@@ -75,13 +76,18 @@ const UserFeedback = () => {
             />
           </div>
           {sendFeedback ? (
-            <button className={styles.backButton} onClick={() => navigate(-1)}>
-            <span>&#8592; Go back</span>
-          </button>
+            <ActionButton
+              className={styles.backButton}
+              onClick={() => navigate(-1)}
+              spanContent="&#8592; Go back"
+            />
           ) : (
-            <button onClick={handleSubmit} disabled={!feedbackType} className={styles.submitButton}>
-              Submit Feedback
-            </button>
+            <ActionButton
+              onClick={handleSubmit}
+              disabled={!feedbackType}
+              className={styles.submitButton}
+              btnName="Submit Feedback"
+            />
           )}
         </div>
       </div>

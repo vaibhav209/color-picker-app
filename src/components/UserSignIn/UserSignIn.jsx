@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './UserSignIn.module.css';
 import routes from '../../routes/routes.json';
 import { toast } from 'react-toastify';
 import Footer from '../Footer/Footer';
+import ActionButton from '../ActionButton/ActionButton';
+import AuthLink from '../AuthLink/AuthLink';
+import InputField from '../InputField/InputField';
+import { isValidEmail } from '../../utils/validationUtils';
 
 const UserSignIn = () => {
   const [username, setUsername] = useState('');
@@ -11,13 +15,10 @@ const UserSignIn = () => {
 
   const navigate = useNavigate();
 
-  const emailPattern =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
   const signInHandler = () => {
     const getUserInfo = JSON.parse(localStorage.getItem('user'));
 
-    if (!emailPattern.test(username)) {
+    if (!isValidEmail(username)) {
       toast.error('Please enter a valid email address');
     } else if (password.length < 4) {
       toast.error('Your password must be at least four characters long');
@@ -46,40 +47,36 @@ const UserSignIn = () => {
 
   return (
     <>
-      <div className={styles.loginSection}>
+      <div className={styles.signInSection}>
         <h2>Sign In</h2>
-        <input
+
+        <InputField
           placeholder="Email"
           type="email"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className={styles.userInput}
           onKeyPress={handleKeyPress}
         />
 
-        <input
+        <InputField
           placeholder="Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className={styles.userInput}
           onKeyPress={handleKeyPress}
         />
 
-        <button
+        <ActionButton
           onClick={signInHandler}
-          className={styles.loginButton}
+          className={styles.signInButton}
           disabled={!username || !password}
-        >
-          Sign In
-        </button>
-
-        <p>
-          Don't have an account?{' '}
-          <Link to={routes.USERSIGNUP} className={styles.linkStyles}>
-            <span>SignUp</span>
-          </Link>
-        </p>
+          btnName="Sign In"
+        />
+        <AuthLink
+          text="Don't have an account?"
+          to={routes.USERSIGNUP}
+          toLinkName="SignUp"
+        />
 
         <Footer />
       </div>
